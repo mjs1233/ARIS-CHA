@@ -9,3 +9,5 @@ add_executable(ARIS_RV32I
 )
 
 include_directories(include)
+
+target_link_libraries(ARIS_RV32I PRIVATE stdc++exp)
