@@ -1,0 +1,62 @@
+ENTRY(_start)
+
+/*
+ * Simulator RAM: 32 KiB, mapped from 0x00000000 through 0x00007fff.
+ *
+ *   0x0000 - 0x07ff : initialized data and BSS (2 KiB)
+ *   0x0800 - 0x1fff : external-device address space (6 KiB, reserved)
+ *   0x2000 - 0x7fff : code and read-only data
+ *   0x8000           : initial stack pointer; stack grows downward
+ */
+MEMORY
+{
+    DATA   (rw) : ORIGIN = 0x00000000, LENGTH = 2K
+    DEVICE (rw) : ORIGIN = 0x00000800, LENGTH = 6K
+    CODE   (rx) : ORIGIN = 0x00002000, LENGTH = @FIRMWARE_RAM_LENGTH@ - 8K
+}
+
+SECTIONS
+{
+    . = ORIGIN(DATA);
+
+    .data : ALIGN(4)
+    {
+        __data_start = .;
+        /* Keep a byte at address 0 so objcopy preserves the code offset in .bin. */
+        BYTE(0)
+        *(.data .data.*)
+        __data_end = .;
+    } > DATA
+
+    .bss (NOLOAD) : ALIGN(4)
+    {
+        __bss_start = .;
+        *(.bss .bss.*)
+        *(COMMON)
+        __bss_end = .;
+    } > DATA
+
+    /* DEVICE is deliberately left without linker sections. */
+
+    . = ORIGIN(CODE);
+
+    .text : ALIGN(4)
+    {
+        KEEP(*(.text.init))
+        *(.text .text.*)
+    } > CODE
+
+    .rodata : ALIGN(4)
+    {
+        *(.rodata .rodata.*)
+    } > CODE
+
+    . = ALIGN(16);
+    __code_end = .;
+    __stack_top = ORIGIN(CODE) + LENGTH(CODE);
+    __stack_limit = __code_end;
+
+    ASSERT(LENGTH(CODE) > 0, "RAM must be larger than 8 KiB")
+    ASSERT(__stack_top == 0x00008000, "this firmware map requires 32 KiB RAM")
+    ASSERT(__code_end <= __stack_top, "code overlaps the stack start")
+}

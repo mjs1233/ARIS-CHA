@@ -1,0 +1,21 @@
+{
+  "version": 4,
+  "configurePresets": [
+    {
+      "name": "rv32i-debug",
+      "displayName": "RV32I Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/rv32i-debug",
+      "toolchainFile": "${sourceDir}/cmake/riscv-unknown-elf-toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "rv32i-debug",
+      "configurePreset": "rv32i-debug"
+    }
+  ]
+}

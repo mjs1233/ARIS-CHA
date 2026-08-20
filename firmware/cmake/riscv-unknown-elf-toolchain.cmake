@@ -1,0 +1,30 @@
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR riscv32)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+
+set(RISCV_TOOLCHAIN_BIN "/home/takakura/opt/riscv32im/bin" CACHE PATH
+    "Directory containing RISC-V GNU toolchain executables")
+set(RISCV_TOOLCHAIN_PREFIX "riscv32-unknown-elf" CACHE STRING
+    "Prefix of the RISC-V GNU toolchain executables")
+
+find_program(RISCV_GCC
+    NAMES ${RISCV_TOOLCHAIN_PREFIX}-gcc
+    HINTS ${RISCV_TOOLCHAIN_BIN}
+    REQUIRED
+)
+find_program(RISCV_GXX
+    NAMES ${RISCV_TOOLCHAIN_PREFIX}-g++
+    HINTS ${RISCV_TOOLCHAIN_BIN}
+    REQUIRED
+)
+find_program(RISCV_OBJCOPY
+    NAMES ${RISCV_TOOLCHAIN_PREFIX}-objcopy
+    HINTS ${RISCV_TOOLCHAIN_BIN}
+    REQUIRED
+)
+
+set(CMAKE_C_COMPILER ${RISCV_GCC})
+set(CMAKE_CXX_COMPILER ${RISCV_GXX})
+set(CMAKE_ASM_COMPILER ${RISCV_GCC})
+set(CMAKE_OBJCOPY ${RISCV_OBJCOPY} CACHE FILEPATH
+    "RISC-V GNU objcopy executable")
