@@ -5,7 +5,12 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(ARIS_RV32I
         src/main.cpp
-
+        src/CPU.cpp
+        src/Config.cpp
+        src/Decoder.cpp
+        src/ExecutionStage.cpp
+        src/RAM.cpp
+        src/RegisterFile.cpp
 )
 
 include_directories(include)

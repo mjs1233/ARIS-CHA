@@ -11,7 +11,7 @@ namespace aris {
         word instruction_section;
         word data_section;
     };
-    inline static Config g_config;
-}
 
-#endif //ARIS_RV32I_CONFIG_HPP
+    extern Config g_config;
+}
+#endif // ARIS_RV32I_CONFIG_HPP

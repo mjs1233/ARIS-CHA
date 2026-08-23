@@ -29,16 +29,16 @@ namespace aris {
         fence, ecall, ebreak
     };
 
-    enum class ExecutionTarget : std::uint8_t {
-        alu,
-        io,
-        control,
+    enum class InstructionCategory : std::uint8_t {
+        integer_register,
+        memory_access,
+        control_flow,
         system
     };
 
     struct DecodedInstruction {
         Op op;
-        ExecutionTarget execution_target;
+        InstructionCategory category;
         word  rd  = 0;
         byte  rs1 = 0;
         byte  rs2 = 0;
