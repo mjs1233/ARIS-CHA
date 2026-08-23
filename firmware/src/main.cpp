@@ -15,9 +15,9 @@ extern "C" int main() {
         return 0;
     }
 
+    while (true) {
+
+    }
 
     return c;
-    while (true) {
-        asm volatile("wfi");
-    }
 }
