@@ -3,3 +3,5 @@ cmake-build-debug/
 software_simulation/.idea/
 build/
 firmware/.idea/
+dsp/.idea/
+
