@@ -5,23 +5,9 @@
 #include <fstream>
 #include <filesystem>
 #include <print>
-#include "IQ_Signal.hpp"
-#include "aris/dsp/dsp.hpp"
+#include "iq_signal.hpp"
 
 int main(int argc, char* argv[]) {
-
-    aris::dsp::stream_block<int> signal;
-
-    auto p =
-    aris::dsp::stream_pipeline{} |
-    [](aris::dsp::stream_block<int>& s,int& a) { std::cout << "A\n"; a += 1; } |
-    [](aris::dsp::stream_block<int>& s,int& a) { std::cout << "B" << a << "\n"; a += 1; } |
-    [](aris::dsp::stream_block<int>& s,int& a) { std::cout << "C" << a << "\n"; };
-
-    int a = 0;
-    p.exec(signal,a);
-
-    return 0;
 
     if (argc != 2) {
         std::print("[fatal] enter input file\n");
@@ -29,7 +15,7 @@ int main(int argc, char* argv[]) {
     }
 
     uint64_t size = std::filesystem::file_size(argv[1]);
-    std::vector<aris::dsp::IQ_Signal<int8_t>> signals;
+    std::vector<IQ_Signal<int8_t>> signals;
     signals.reserve(size);
 
     std::filesystem::path input_file{argv[1]};
@@ -48,6 +34,9 @@ int main(int argc, char* argv[]) {
         }
 
     }
+
+
+
 
     return 0;
 }
