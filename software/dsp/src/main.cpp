@@ -6,9 +6,11 @@
 #include <filesystem>
 #include <print>
 #include "iq_signal.hpp"
+#include "stream/stream_pool.hpp"
 
 int main(int argc, char* argv[]) {
 
+    /*
     if (argc != 2) {
         std::print("[fatal] enter input file\n");
         return 0;
@@ -36,7 +38,7 @@ int main(int argc, char* argv[]) {
     }
 
 
-
+*/
 
     return 0;
 }
