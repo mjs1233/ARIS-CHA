@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="d7y4G9yXGBypnxEWIrkW">
+    <mxGraphModel dx="2100" dy="1868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-25" edge="1" parent="1" source="fnSX_MUnwAxVyt8Rv3mM-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="fnSX_MUnwAxVyt8Rv3mM-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-9" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" value="" vertex="1">
+          <mxGeometry height="100" width="80" x="-290" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-18" edge="1" parent="1" source="fnSX_MUnwAxVyt8Rv3mM-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="fnSX_MUnwAxVyt8Rv3mM-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;LNA&lt;/font&gt;&lt;br&gt;&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;(20dB)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="390" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-20" edge="1" parent="1" source="fnSX_MUnwAxVyt8Rv3mM-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="fnSX_MUnwAxVyt8Rv3mM-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;SAW Filter&lt;br&gt;(10~20MHz BW)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="550" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;ADC&lt;br&gt;(Pluto SDR&lt;/font&gt;)" vertex="1">
+          <mxGeometry height="60" width="120" x="710" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-30" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;antenna feed-point PCB&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="180" width="490" x="-160" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-24" parent="fnSX_MUnwAxVyt8Rv3mM-30" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;Matching Network&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-21" parent="fnSX_MUnwAxVyt8Rv3mM-30" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;Balum&lt;br&gt;(50Ohm 1:1)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="185" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-26" edge="1" parent="fnSX_MUnwAxVyt8Rv3mM-30" source="fnSX_MUnwAxVyt8Rv3mM-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="fnSX_MUnwAxVyt8Rv3mM-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-15" parent="fnSX_MUnwAxVyt8Rv3mM-30" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;3rd Order LC Filter&lt;br&gt;(~50MHz BW)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-23" edge="1" parent="fnSX_MUnwAxVyt8Rv3mM-30" source="fnSX_MUnwAxVyt8Rv3mM-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="fnSX_MUnwAxVyt8Rv3mM-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-31" edge="1" parent="1" source="fnSX_MUnwAxVyt8Rv3mM-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="fnSX_MUnwAxVyt8Rv3mM-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-47" edge="1" parent="1" source="fnSX_MUnwAxVyt8Rv3mM-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" target="fnSX_MUnwAxVyt8Rv3mM-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnSX_MUnwAxVyt8Rv3mM-46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font face=&quot;GyeonggiTitleOTF Medium&quot;&gt;LDO&lt;br&gt;(5V)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="190" y="820" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
