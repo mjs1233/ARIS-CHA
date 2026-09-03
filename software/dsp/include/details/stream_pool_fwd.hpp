@@ -6,6 +6,7 @@
 #define DSP_STREAM_POOL_FWD_HPP
 #include <cstdint>
 namespace aris::dsp::details {
+    void acquire_stream_buffer_data();
     void release_stream_buffer_data(std::size_t pool_id, void* ptr);
 }
 

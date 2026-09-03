@@ -113,7 +113,7 @@ namespace aris::dsp {
         }
 
         template <typename T,std::size_t Capacity>
-        static std::expected<stream_buffer<T>,acquire_fail> acquire(acquire_token<T,Capacity> token) {
+        static std::expected<stream_buffer<T,Capacity>,acquire_fail> acquire(acquire_token<T,Capacity> token) {
 
             auto self = get_instance();
 
@@ -125,7 +125,7 @@ namespace aris::dsp {
             if (ptr == nullptr) {
                 return std::unexpected(acquire_fail::no_free_slot);
             }
-            return stream_buffer<T>{self->pools[token.m_pool_id].capacity,token.m_pool_id,ptr};
+            return stream_buffer<T,Capacity>{token.m_pool_id,ptr};
         }
 
         static stream_pool_manager* get_instance() {
@@ -139,6 +139,10 @@ namespace aris::dsp {
             auto self = get_instance();
 
             if (!self->data) {
+                return;
+            }
+
+            if (pool_id >= self->pools.size()) {
                 return;
             }
 

@@ -4,6 +4,7 @@
 
 #ifndef DSP_NOISE_GATE_HPP
 #define DSP_NOISE_GATE_HPP
+#include <cstddef>
 
 namespace aris::dsp::stream {
 
