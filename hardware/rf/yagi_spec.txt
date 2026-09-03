@@ -1,0 +1,30 @@
+-------------------------------------------------------------
+Frequency     :  1090  MHz, (useful from 1068.2 to 1111.8)
+Wavelength    :  275  mm
+Rod Diameter  :  2  mm
+Boom Diameter :  5  mm
+Boom Length   :  268  mm
+d/lambda      :  0.007    ( min.: 0.002 , max.: 0.01 )
+D/lambda      :  0.018    ( min.: 0.01 , max.: 0.05 )
+Elements      :  6
+Gain          :  9.01 dBd (approx.)
+-------------------------------------------------------------
+Reflector Length   : 133 mm
+Reflector Position :  0 mm
+-------------------------------------------------------------
+Dipole Position    : 66 mm
+-------------------------------------------------------------
+Director #1 Position : 87 mm ,  Length : 125 mm
+Distance Dipole - Dir. #1 : 21 mm 
+-------------------------------------------------------------
+Director #2 Position : 136 mm ,  Length : 124 mm
+Distance Dir. #1 - Dir. #2 : 50 mm 
+-------------------------------------------------------------
+Director #3 Position : 195 mm ,  Length : 123 mm
+Distance Dir. #2 - Dir. #3 : 59 mm 
+-------------------------------------------------------------
+Director #4 Position : 264 mm ,  Length : 122 mm
+Distance Dir. #3 - Dir. #4 : 69 mm 
+-------------------------------------------------------------
+Directors / Parasitics are isolated.
+Please choose an isolater thicker than : 3 mm
