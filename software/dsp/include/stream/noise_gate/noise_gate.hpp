@@ -5,6 +5,8 @@
 #ifndef DSP_NOISE_GATE_HPP
 #define DSP_NOISE_GATE_HPP
 #include <cstddef>
+#include <array>
+#include "types.hpp"
 
 namespace aris::dsp::stream {
 
@@ -21,6 +23,7 @@ namespace aris::dsp::stream {
     };
 
     template <std::size_t N>
+    requires (N <= 1024)
     struct trailing_estimator {
 
     };
