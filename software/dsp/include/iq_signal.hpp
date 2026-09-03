@@ -4,8 +4,8 @@
 
 namespace aris::dsp {
     struct iq_signal {
-        uint16_t I;
-        uint16_t Q;
+        std::int8_t I;
+        std::int8_t Q;
     };
 }
 

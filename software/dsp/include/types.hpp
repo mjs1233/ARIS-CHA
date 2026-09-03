@@ -8,6 +8,7 @@
 
 namespace aris::dsp {
     using sample_type_t = std::uint16_t;
+
 }
 
 #endif //DSP_TYPES_HPP
