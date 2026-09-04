@@ -2,8 +2,8 @@
 #include <cstdint>
 #include <iostream>
 
-#include "details/graph_context.hpp"
 #include "iq_signal.hpp"
+#include "stream/graph.hpp"
 #include "stream/noise_gate/noise_gate.hpp"
 #include "stream/power/iq_power.hpp"
 #include "stream/separator.hpp"
@@ -38,15 +38,14 @@ int main() {
     };
     aris::dsp::stage::sink_kst<"modes1_power.dat"> sink;
 
-    aris::dsp::details::graph_context::start();
-    source.output.connect(power.iq_in);
-    power.power_out.connect(separator.input);
-    separator.output_a.connect(gate.sample_in);
-    separator.output_b.connect(sink.source_in);
-    gate.sample_out.connect(sink.result_in);
-    aris::dsp::details::graph_context::finish();
+    aris::dsp::graph pipeline;
+    pipeline.connect(source.output, power.iq_in);
+    pipeline.connect(power.power_out, separator.input);
+    pipeline.connect(separator.output_a, gate.sample_in);
+    pipeline.connect(separator.output_b, sink.source_in);
+    pipeline.connect(gate.sample_out, sink.result_in);
 
-    const auto execution_order = aris::dsp::details::graph_context::calc();
+    const auto execution_order = pipeline.compile();
     while (!source.eof()) {
         for (auto* node : execution_order) {
             node->run();

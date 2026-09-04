@@ -5,20 +5,19 @@
 #ifndef DSP_PORT_HPP
 #define DSP_PORT_HPP
 
-#include <cassert>
 #include <cstdint>
 #include <optional>
+#include <stdexcept>
 #include <string>
 #include <string_view>
 #include <utility>
 #include <vector>
 #include <stream/stream_buffer.hpp>
-#include <details/graph_context.hpp>
 #include <stream/node.hpp>
 
 namespace aris::dsp {
 
-
+    class graph;
 
     class port_base {
     public:
@@ -62,8 +61,10 @@ namespace aris::dsp {
 
     private:
         friend class output_port<T,Capacity>;
+        friend class graph;
 
         std::optional<stream_buffer<T,Capacity>> m_buffer;
+        bool m_connected = false;
     };
 
     template <typename T, std::size_t Capacity>
@@ -75,25 +76,21 @@ namespace aris::dsp {
         explicit output_port(node* owner) :
         port_base(owner,direction::out) {}
 
-        void connect(input_port<T,Capacity>& input) {
-
-            if (m_next) {
-                throw std::logic_error("input port already connected");
-            }
-            m_next = &input;
-
-            details::graph_context::connect(owner(),input.owner());
-        }
-
         void send(stream_buffer<T, Capacity>&& buffer) {
 
-            assert(m_next != nullptr);
-            assert(!m_next->m_buffer);
+            if (m_next == nullptr) {
+                throw std::logic_error("output port is not connected");
+            }
+            if (m_next->m_buffer) {
+                throw std::logic_error("input port already contains a buffer");
+            }
 
             m_next->m_buffer = std::move(buffer);
         }
 
     private:
+        friend class graph;
+
         input_port<T,Capacity>* m_next = nullptr;
     };
 }
