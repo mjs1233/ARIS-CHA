@@ -5,3 +5,4 @@ build/
 firmware/.idea/
 dsp/.idea/
 build/
+/software/dsp/res/

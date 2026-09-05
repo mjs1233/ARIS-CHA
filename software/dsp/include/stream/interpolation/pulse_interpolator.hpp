@@ -17,13 +17,16 @@ public:
     pulse_interpolator(
         acquire_token<std::uint16_t, StreamSize> magnitude_token,
         acquire_token<std::uint8_t, StreamSize> shift_token
-    );
+    ) : m_magnitude_token(magnitude_token),
+        m_shift_token(shift_token) {}
 
     input_port<std::uint16_t, StreamSize> magnitude_in{this};
     output_port<std::uint16_t, StreamSize> magnitude_out{this};
     output_port<std::uint8_t, StreamSize> shift_out{this};
 
-    void run() override;
+    void run() override {
+
+    }
 
 private:
     [[nodiscard]]

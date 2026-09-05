@@ -1,0 +1,11 @@
+This is the mode_s_decode-write-a-block package meant as a guide to building
+out-of-tree packages. To use the mode_s_decode blocks, the Python namespaces
+is in 'mode_s_decode', which is imported as:
+
+    import mode_s_decode
+
+See the Doxygen documentation for details about the blocks available
+in this package. A quick listing of the details can be found in Python
+after importing by using:
+
+    help(mode_s_decode)
